@@ -9,7 +9,7 @@ local camera = game.Workspace.CurrentCamera
 
 local maxDistanceRendering = 300 -- Maximum Distance
 
-local RATE_PER_SECOND = 2
+local RATE_PER_SECOND = 2 
 
 
 local DistantParts_folder = Instance.new("Folder") -- Initiallize folder for "DistantParts"
@@ -75,11 +75,11 @@ end)
 
 
 
-player.CharacterRemoving:Connect(function()
-	for i,v in pairs(Source:GetChildren()) do
+player.CharacterRemoving:Connect(function() -- resets the loaded objects (possibly unnecessary but also helps if player is having low frames upon death)
+	for i,v in pairs(Source:GetChildren()) do -- returns all models to workspace
 		v.Parent = game.Workspace
 	end
-	for i,v in pairs(DistantParts_folder:GetChildren()) do
+	for i,v in pairs(DistantParts_folder:GetChildren()) do -- removes all distance parts
 		v:Destroy()
 	end
 end)
