@@ -20,7 +20,7 @@ local Source = Instance.new("Folder") -- Initiallize folder for "WorldStorage"
 Source.Parent = game:GetService("ReplicatedStorage")
 Source.Name = "WorldStorage"
 
-RunService.Heartbeat:Connect(function(step) -- heartbeat function; works better than while loop because it runs ever frame
+RunService.Heartbeat:Connect(function(step) -- heartbeat function; works better than while loop because it runs every frame
 	local increment = RATE_PER_SECOND * step
 	wait()
 	for i, model in pairs(workspace:GetChildren()) do --check if models are too far
